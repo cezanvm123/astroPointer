@@ -196,7 +196,7 @@ void test1::runTest()
     Ephemeris::setAltitude(0);
 
     // Choose a date and time
-    int day = 16, month = 1, year = 2020, hour = 20, minute = 0, second = 0;
+    int day = 17, month = 1, year = 2020, hour = 10, minute = 0, second = 0;
 
     // Compute and print solar system objects
     Serial.print("Data of Solar system objects (");
