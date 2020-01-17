@@ -16,6 +16,7 @@ void test1::printDateAndTime(int day, int month, int year, int hour, int minute,
   Serial.print(second);
 }
 
+
 void test1::equatorialCoordinatesToString(EquatorialCoordinates coord, char raCoord[14] , char decCoord[14])
 {
   int raHour,raMinute;
