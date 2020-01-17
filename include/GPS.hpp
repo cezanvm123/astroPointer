@@ -1,12 +1,18 @@
+#include <Arduino.h>
+#include <TinyGPS.h>
 
-struct Position
+#define RXD2 16
+#define TXD2 17
+
+
+struct GPSPosition
 {
    float lon;
    float lat;
    float alt;
 };
 
-struct Time 
+struct GPSTime 
 {
     int year;
     int month;
@@ -21,12 +27,27 @@ class GPS
 
 public:
     void setupGPS();
-    Position getGPSPosition();
-    Time getGPSTime(); // should not be void but not sure which return type it wil be.
+    void updateGPS();
+    bool getGPSPosition(GPSPosition &pos);  // returns true is data is valid returns false if unvalid
+    bool getGPSTime(GPSTime & time);    // returns true is data is valid returns false if unvalid
+    int getConnectedSatellites();
+
 
 private:
+    TinyGPS gps;
+
+    GPSPosition gpsPos;
+    GPSTime gpsTime;
 
 
+    // float flat, flon;
+    // unsigned long age, data, time, chars = 0;
+    // unsigned short sentences = 0, failed = 0;
+    bool isValid = false;
+    int connectedSatellites = 0;
+
+    void calculatePostion(); // not currently used 
+    void calculateDateTime(TinyGPS &gps);
 
 };
 
