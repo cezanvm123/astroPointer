@@ -1,0 +1,12 @@
+Rotary encoder
+- SW = D15
+- A = D2
+- B = D4
+
+
+Display 
+- SDA = D32
+- SCL = D18
+- Res = D32
+- DC = D35
+- BLK = D34
