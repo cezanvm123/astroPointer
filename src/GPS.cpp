@@ -15,7 +15,7 @@ bool GPS::getGPSPosition(GPSPosition &pos)
 {
     if (!isValid)
         return false;
-
+  
     pos = gpsPos;
     return true;
 }
