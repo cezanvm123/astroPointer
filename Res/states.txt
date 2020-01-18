@@ -1,0 +1,24 @@
+|-> Startup
+|----> Stepper calibrate
+|----> Waiting for GPS lock
+
+
+|-> Operation
+|----> Normal planet tracking 
+|----> Planet changed
+|----> 
+
+
+|-> GPS
+|----> Invalid GPS      // Invalid gps when device is powerd on for the first time or if GPS is lost for more than 1 hour 
+|----> Invalid short GPS       // Invalid short GPS when GPS signal is lost last known Lat Lon are used
+|----> Valid GPS 
+
+
+|-> Display 
+|----> Startup  
+|--------> stepper calibration 
+|--------> searching GPS 
+|----> Normal operation 
+|--------> Static planet 
+|--------> Planet changing

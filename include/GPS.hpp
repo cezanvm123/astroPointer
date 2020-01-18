@@ -2,7 +2,7 @@
 #include <TinyGPS.h>
 
 #define RXD2 16
-#define TXD2 17
+#define TXD2 17 
 
 
 struct GPSPosition
@@ -39,10 +39,6 @@ private:
     GPSPosition gpsPos;
     GPSTime gpsTime;
 
-
-    // float flat, flon;
-    // unsigned long age, data, time, chars = 0;
-    // unsigned short sentences = 0, failed = 0;
     bool isValid = false;
     int connectedSatellites = 0;
 

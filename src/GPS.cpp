@@ -9,6 +9,14 @@ void GPS::setupGPS()
     Serial.println(TinyGPS::library_version());
 
     Serial.println("GPS setup complete");
+
+
+    pinMode(33,OUTPUT);
+
+    digitalWrite(33,HIGH);
+    delay(1000);
+    digitalWrite(33,LOW);
+
 }
 
 bool GPS::getGPSPosition(GPSPosition &pos)
@@ -39,10 +47,10 @@ void GPS::updateGPS()
 {
     bool newData = false;
 
-    while (Serial2.available())
+    if(Serial2.available())
     {
         char c = Serial2.read();
-        Serial.write(c);
+       // Serial.write(c);
 
         if (gps.encode(c))
             newData = true;
@@ -50,6 +58,7 @@ void GPS::updateGPS()
 
     if (newData)
     {
+        digitalWrite(33,HIGH);
         float flat, flon;
         unsigned long age;
         gps.f_get_position(&flat, &flon, &age);
@@ -72,7 +81,10 @@ void GPS::updateGPS()
         calculateDateTime(gps);
     }
     else 
+    {
         connectedSatellites = 0;
+        digitalWrite(33,LOW);
+    }
 }
 
 void GPS::calculateDateTime(TinyGPS &gps)
