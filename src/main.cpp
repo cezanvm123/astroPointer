@@ -21,7 +21,7 @@ void setup() {
   enc.ButtonEncoderSetup();
   
 
-  test.runTest();
+ // test.runTest();
   compass.setupCompass();
 
 }

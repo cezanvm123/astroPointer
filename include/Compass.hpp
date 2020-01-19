@@ -1,5 +1,5 @@
 
-#include <HMC5883L.h>
+#include<Arduino.h>
 #include <Wire.h>
 
 class Compass 
@@ -14,11 +14,11 @@ public:
 
 private:
     void calibrate();
+    void displaySensorDetails();
     float heading;
 
+    
 
-    HMC5883L compass;
-    MagnetometerScaled valueOffset;
 
     int error;
     bool isCalibrated;
