@@ -4,7 +4,7 @@ void GPS::setupGPS()
 {
     Serial.println("GPS setup start");
 
-    Serial2.begin(9600, SERIAL_8N1, RXD2, TXD2);
+    Serial2.begin(9600, SERIAL_8N1);//, RXD2, TXD2);
     Serial.print("Simple TinyGPS library v. ");
     Serial.println(TinyGPS::library_version());
 

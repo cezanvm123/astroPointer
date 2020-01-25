@@ -36,6 +36,7 @@ public:
 private:
     TinyGPS gps;
 
+ //   HardwareSerial Serial2 = HardwareSerial(2);
     GPSPosition gpsPos;
     GPSTime gpsTime;
 

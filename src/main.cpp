@@ -27,14 +27,16 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:      
+  // put your main code here, to run repeatedly:     
+  
+  compass.updateCompass();
+
+
   gps.updateGPS();
 
 
   int navigated, pressed;
   enc.ButtonEncoderUpdate(navigated, pressed);
-
-  compass.updateCompass();
 
   if(navigated != 0)
     Serial.println(navigated);
